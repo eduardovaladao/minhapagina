@@ -1,3 +1,44 @@
 /*
-    Comentários de Desenvolvimento
+    !! Comentários de Desenvolvimento !!
+
+    "/!\" significa "atenção, incompleto ou refazer";
+
+    "root" --> Tema principal de cores
 */
+
+:root {
+    --primaryColor: rgb(0, 0, 0);
+    --secundaryColor: rgb(255, 255, 255);
+    --terciaryColor: rgb(126, 126, 126);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    /* /!\ */
+    width: 100%;
+    height: 40vh;
+    background-color: aliceblue;
+}
+
+header .top-title {
+    width: 50%;
+}
+
+.top-title
+
+main {
+    /* /!\ */
+}
+
+footer {
+    /* /!\ */
+}
