@@ -10,7 +10,7 @@
 
     <title>www.eduardovaladao.net.br</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/style.css">
     <!--
         Comentários de desenvolvimento
 
@@ -20,21 +20,22 @@
 <body>
 
     <!-- Início do Header -->
-    <header>
+    <header id="header">
         <!-- Algumas palavrinhas iniciais -->
         <div class="top-title">
             <h1>Olá, Mundo!</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione sapiente ea repudiandae. Enim sequi
                 tempore modi.</p>
         </div>
+        <!---->
     </header>
     <!-- Fim do Header -->
 
     <!-- Início da Navbar -->
     <nav>
         <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Sobre mim</a></li>
+            <li><a href="#header">Início</a></li>
+            <li><a href="#sobre-mim">Sobre mim</a></li>
             <li><a href="#">Contatos</a></li>
         </ul>
     </nav>
@@ -42,10 +43,11 @@
 
     <!-- Início do Main -->
     <main>
-        <div class="container">
+        <div id="sobre-mim" class="container flex-row">
+
             <!-- Região da Imagem -->
             <div class="image-block">
-                <img src="" alt="">
+                <img src="assets/fuscão.png" alt="">
             </div>
             <!---->
 
@@ -55,6 +57,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto laborum in suscipit at. Magnam ad quibusdam velit inventore quasi, ipsum eos quidem id blanditiis nostrum architecto sequi sit exercitationem? Debitis!</p>
             </div>
             <!---->
+
         </div>
     </main>
     <!-- Fim do Main -->
@@ -63,7 +66,7 @@
     <footer>
         <h2>Meus contatos</h2>
         <!-- Região das redes sociais-->
-        <div class="container flex">
+        <div class="container flex-row">
             
             <!-- Início do Field 1 -->
             <div class="field">

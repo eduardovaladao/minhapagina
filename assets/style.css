@@ -1,0 +1,128 @@
+@charset "UTF-8";
+/*
+    !! Comentários de Desenvolvimento !!
+
+    "/!\" significa "atenção, incompleto ou refazer";
+
+    "root" --> Tema principal de cores
+*/
+
+:root {
+    --white: #FFFFFF;
+    --black: #000;
+
+    --topTitleSize-lg: 120px;
+    --h2Size-lg: 60px;
+    --pSize-lg: 18px;
+    --navbarLinkSize-lg: 21px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    max-height: 70vh;
+    min-height: 600px;
+    background-color: aliceblue;
+    margin-bottom: 50px;
+}
+
+.top-title {
+    min-width: 60%;
+    height: 100%;
+    padding: 50px;
+}
+
+.top-title h1 {
+    margin-top: 100px;
+    font: var(--topTitleSize-lg) "Arial, Helvetica, sans-serif";
+}
+
+.top-title p {
+    margin-top: 30px;
+    font: var(--pSize-lg) "Arial, Helvetica, sans-serif";
+}
+
+nav {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 150px;
+    padding: 10px 50px;
+    position: sticky;
+    overflow: hidden;
+    top: 0px;
+    background-color: var(--white);
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0px 30px;
+}
+
+li a {
+    text-decoration: none;
+    font-size: var(--navbarLinkSize-lg);
+    color: var(--black);
+}
+
+main {
+    /* /!\ */
+    width: 100%;
+    padding: 0px 100px;
+    background-color: var(--white);
+}
+
+main .image-block {
+    width: 50%;
+    min-width: 200px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.image-block img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+main .text-block {
+    width: 50%;
+    margin-bottom: 100px;
+}
+
+.text-block h2 {
+    font-size: var(--h2Size-lg);
+    margin-bottom: 50px;
+}
+
+.text-block p {
+    text-align: justify;
+}
+
+footer {
+    /* /!\ */
+}
+
+.container {
+    
+}
+
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+}
