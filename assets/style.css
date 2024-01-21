@@ -4,7 +4,7 @@
 
     "/!\" significa "atenção, incompleto ou refazer";
 
-    "root" --> Tema principal de cores
+    "root" --> Tema principal de cores e tamanhos de fontes
 */
 
 :root {
@@ -13,6 +13,7 @@
 
     --topTitleSize-lg: 120px;
     --h2Size-lg: 60px;
+    --h3Size-lg: 40px;
     --pSize-lg: 18px;
     --navbarLinkSize-lg: 21px;
 }
@@ -29,12 +30,23 @@ body {
     margin: 0;
 }
 
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.perfect-centered-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 header {
     width: 100%;
     max-height: 70vh;
     min-height: 600px;
     background-color: aliceblue;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .top-title {
@@ -80,29 +92,44 @@ li a {
 }
 
 main {
-    /* /!\ */
     width: 100%;
     padding: 0px 100px;
     background-color: var(--white);
 }
 
-main .image-block {
-    width: 50%;
-    min-width: 200px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-
-.image-block img {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-}
-
-main .text-block {
-    width: 50%;
+.container {
+    width: 100%;
     margin-bottom: 100px;
+}
+
+.container .img-block {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-field {
+    width: 250px;
+    height: 250px;
+    min-width: 250px;
+    min-height: 250px;
+    border: 3px solid #000;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: rgb(226, 226, 226);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-field img {
+    width: 150%;   
+}
+
+.container .text-block {
+    width: 70%;
+    padding: 0px 50px;
 }
 
 .text-block h2 {
@@ -116,13 +143,44 @@ main .text-block {
 
 footer {
     /* /!\ */
+    width: 100%;
+    padding: 20px 50px;
+    background-color: rgb(138, 124, 230);
 }
 
-.container {
-    
+footer h3 {
+    font-size: var(--h3Size-lg);
+    margin-bottom: 30px;
 }
 
-.flex-row {
+footer .field {
+    padding: 20px;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+.field [class*="-block"] {
+    display: inline-block;
+}
+
+.logo-icon-block {
+    width: 70px;
+    height: 70px;
+    background-color: #a3a3a3;
+    border-radius: 30%;
+}
+
+.icon-field {
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+i.fa {
+    font-size: 60px;
+    color: white;
 }
