@@ -8,11 +8,13 @@
 */
 
 :root {
+    --primaryColor: #FFFFFF;
     --white: #FFFFFF;
     --black: #000;
 
     --topTitleSize-lg: 120px;
-    --h2Size-lg: 60px;
+    --subtitleSize-lg: 50px;
+    --topicSize-lg: 60px;
     --h3Size-lg: 40px;
     --pSize-lg: 18px;
     --navbarLinkSize-lg: 21px;
@@ -30,6 +32,10 @@ body {
     margin: 0;
 }
 
+.primary-color {
+    color: var(--primaryColor);
+}
+
 .flex-row {
     display: flex;
     flex-flow: row wrap;
@@ -45,14 +51,19 @@ header {
     width: 100%;
     max-height: 70vh;
     min-height: 600px;
-    background-color: aliceblue;
+    background-image: url(por-do-sol.jpg);
+    padding: 0px 50px;
     margin-bottom: 20px;
+}
+
+header a {
+
 }
 
 .top-title {
     min-width: 60%;
     height: 100%;
-    padding: 50px;
+    padding: 50px 0px;
 }
 
 .top-title h1 {
@@ -60,9 +71,9 @@ header {
     font: var(--topTitleSize-lg) "Arial, Helvetica, sans-serif";
 }
 
-.top-title p {
+.top-title h2 {
     margin-top: 30px;
-    font: var(--pSize-lg) "Arial, Helvetica, sans-serif";
+    font: var(--subtitleSize-lg) "Arial, Helvetica, sans-serif";
 }
 
 nav {
@@ -95,6 +106,7 @@ main {
     width: 100%;
     padding: 0px 100px;
     background-color: var(--white);
+    margin-bottom: 200px;
 }
 
 .container {
@@ -133,7 +145,7 @@ main {
 }
 
 .text-block h2 {
-    font-size: var(--h2Size-lg);
+    font-size: var(--topicSize-lg);
     margin-bottom: 50px;
 }
 
@@ -155,6 +167,8 @@ footer h3 {
 
 footer .field {
     padding: 20px;
+    display: flex;
+    align-items: center;
 }
 
 footer ul {
@@ -166,10 +180,14 @@ footer ul {
 }
 
 .logo-icon-block {
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
     background-color: #a3a3a3;
     border-radius: 30%;
+}
+
+.logo-text-block {
+    padding: 8px 12px;
 }
 
 .icon-field {
@@ -181,6 +199,6 @@ footer ul {
 }
 
 i.fa {
-    font-size: 60px;
+    font-size: 30px;
     color: white;
 }
