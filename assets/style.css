@@ -14,7 +14,6 @@
     --black: #000;
 
     --topTitleSize-lg: 120px;
-    --subtitleSize-lg: 50px;
     --topicSize-lg: 60px;
     --h3Size-lg: 30px;
     --pSize-lg: 18px;
@@ -73,11 +72,6 @@ header {
     font: var(--topTitleSize-lg) "Arial, Helvetica, sans-serif";
 }
 
-.top-title h2 {
-    margin-top: 30px;
-    font: var(--subtitleSize-lg) "Arial, Helvetica, sans-serif";
-}
-
 nav {
     width: 100%;
     height: fit-content;
@@ -124,6 +118,9 @@ main {
 }
 
 .img-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 250px;
     height: 250px;
     min-width: 250px;
@@ -132,9 +129,7 @@ main {
     border-radius: 50%;
     overflow: hidden;
     background-color: rgb(226, 226, 226);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* /!\ */
 }
 
 .img-field img {
@@ -152,7 +147,7 @@ main {
 }
 
 .text-block p {
-    text-align: justify;
+    text-align: left;
 }
 
 footer {
