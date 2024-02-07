@@ -8,17 +8,34 @@
 */
 
 :root {
+    /* Variáveis para fontes */
+
+    --big-title: 120px;
+    --big-subtitle: 50px;
+    --big-topic: 40px;
+    --big-paragraph: 21px;
+    --big-info: 18px;
+
+    --medium-title: 70px;
+    --medium-subtitle: 30px;
+    --medium-topic: 25px;
+    --medium-paragraph: 18px;
+    --medium-info: 16px;
+
+    --little-title: 40px;
+    --little-subtitle: 25px;
+    --little-topic: 20px;
+    --little-paragraph: 14px;
+    --little-info: 14px;
+
+    /* Tamanho da imagem principal */
+    --big-top-img-field: 300px;
+    --medium-top-img-field: 250px;
+    --little-top-img-field: 200px;
+    
+    /* Temas de cores */
     --primaryColor: #FFFFFF;
     --secondaryColor: #000000;
-    --white: #FFFFFF;
-    --black: #000;
-
-    --topTitleSize: 120px;
-    --topicSize: 60px;
-    --h3Size: 30px;
-    --pSize: 18px;
-    --navbarLinkSize: 21px;
-    --top-img-size: 300px;
 }
 
 * {
@@ -45,14 +62,6 @@ body {
     flex-flow: row wrap;
 }
 
-/*  Talvez seja útil, talvez não...
-
-.perfect-centered-items {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}*/
-
 header {
     display: flex;
     flex-flow: row wrap;
@@ -63,7 +72,7 @@ header {
     margin-bottom: 20px;
 }
 
-header [class*="top-"] {
+.top-img, .top-title {
     margin-bottom: 50px;    
 }
 
@@ -74,9 +83,9 @@ header [class*="top-"] {
     width: 50%;
 }
 
-.top-img .img-field {
-    width: var(--top-img-size);
-    height: var(--top-img-size);
+.top-img-field {
+    width: var(--big-top-img-field);
+    height: var(--big-top-img-field);
     border-radius: 50%;
     background-color: #ffffff;
 }
@@ -88,13 +97,13 @@ header [class*="top-"] {
 
 .top-title h1 {
     width: 100%;
-    font: var(--topTitleSize) "Arial, Helvetica, sans-serif";
+    font: var(--big-title) "Arial, Helvetica, sans-serif";
     margin-bottom: 20px;
 }
 
 .top-title p {
    width: 100%; 
-   font-size: var(--pSize);
+   font-size: var(--big-paragraph);
 }
 
 .social-media {
@@ -121,7 +130,7 @@ nav {
     position: sticky;
     overflow: hidden;
     top: 0px;
-    background-color: var(--white);
+    background-color: #FFFFFF;
 }
 
 nav ul {
@@ -135,14 +144,14 @@ nav ul li {
 
 li a {
     text-decoration: none;
-    font-size: var(--navbarLinkSize);
-    color: var(--black);
+    font-size: 18px;
+    color: #000;
 }
 
 main {
     width: 100%;
     padding: 0px 50px;
-    background-color: var(--white);
+    background-color: #FFFFFF;
     margin-bottom: 200px;
 }
 
@@ -158,7 +167,7 @@ main {
 }
 
 .text-block h2 {
-    font-size: var(--topicSize);
+    font-size: var(--big-topic);
     margin-bottom: 50px;
 }
 
@@ -176,7 +185,7 @@ footer {
 }
 
 footer h3 {
-    font-size: var(--h3Size);
+    font-size: var(--big-topic);
     margin-bottom: 30px;
 }
 
@@ -196,23 +205,37 @@ footer ul {
     text-align: center;
 }
 
+/*
+@media only screen and (max-width: 1024px) {
 
-@media only screen and (max-width: 800px) {
-    :root {
-        --topTitleSize: 70px;
-        --topicSize: 50px;
-        --pSize: 16px;
-        --navbarLinkSize: 18px;
-        --top-img-size: 200px;
+    .top-img, .top-title {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }    
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+
+    .top-img .top-img-field {
+        width: var(--medium-top-img-field);
+        height: var(--medium-top-img-field);
     }
 
+    .top-title h1 {
+        font-size: var(--medium-title);
+    }
+
+    p {
+        font-size: var(--medium-paragraph);
+    }
+    
     main {
         padding: 0px 18px;
     }
 
     .container [class*="-block"] {
         width: 100%;
-        text-align: center;
         margin-top: 30px;
         padding: 0;
     }
@@ -220,29 +243,27 @@ footer ul {
     .container p  {
         text-align: justify;
     }
-}
-
-@media only screen and (max-width: 600px) {
-    .top-img, .top-title {
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-    }
-
+    
     .footer-section {
         width: 100%;
     }
 }
 
-@media only screen and (max-width: 280px) {
-    :root {
-        --topTitleSize: 50px;
-        --topicSize: 30px;
-        --pSize: 14px;
-        --navbarLinkSize: 16px;
-        --h3Size: 20px;
+@media only screen and (max-width: 769px)and (min-width: 481px) {
+
+    .top-img-field {
+        width: var(--little-top-img-field);
+        height: var(--little-top-img-field);
     }
-    
+
+    .top-title h1 {
+        font-size: var(--little-title);
+    }
+
+    p {
+        font-size: var(--little-paragraph);
+    }
+
     nav {
         padding-left: 10px;
     }
@@ -255,17 +276,33 @@ footer ul {
     nav ul li {
         margin: 0px 10px 0px 0px;
     }
-
-    .img-field {
-        width: 150px;
-        height: 150px;
-        min-width: 150px;
-        min-height: 150px;
+    
+    main {
+        padding: 0px 18px;
     }
 
+    .container [class*="-block"] {
+        width: 100%;
+        margin-top: 30px;
+        padding: 0;
+    }
+
+    .container p  {
+        text-align: justify;
+    }
+    
     footer {
         padding-right: 10px;
         padding-left: 10px;
+        width: 100%;
     }
 
+    .footer-section {
+        width: 100%;
+    }
 }
+
+@media only screen and (max-width: 489px) and (min-width: 320px){
+    
+}
+*/
