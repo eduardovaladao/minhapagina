@@ -3,30 +3,31 @@
     !! Comentários de Desenvolvimento !!
 
     "/!\" significa "atenção, incompleto ou refazer";
+    "/!!\" significa "atenção dobrada, não errar";
+    "root" --> Tema principal de cores e tamanhos de fontes para diferentes telas.
 
-    "root" --> Tema principal de cores e tamanhos de fontes
-*/
+*****/
 
 :root {
     /* Variáveis para fontes */
 
-    --big-title: 120px;
-    --big-subtitle: 50px;
-    --big-topic: 40px;
+    --big-title: 80px;
+    --big-subtitle: 26px;
+    --big-topic: 38px;
     --big-paragraph: 21px;
     --big-info: 18px;
 
-    --medium-title: 70px;
-    --medium-subtitle: 30px;
-    --medium-topic: 25px;
+    --medium-title: 60px;
+    --medium-subtitle: 22px;
+    --medium-topic: 30px;
     --medium-paragraph: 18px;
-    --medium-info: 16px;
+    --medium-info: 14px;
 
     --little-title: 40px;
-    --little-subtitle: 25px;
-    --little-topic: 20px;
+    --little-subtitle: 18px;
+    --little-topic: 22px;
     --little-paragraph: 14px;
-    --little-info: 14px;
+    --little-info: 12px;
 
     /* Tamanho da imagem principal */
     --big-top-img-field: 300px;
@@ -62,6 +63,7 @@ body {
     flex-flow: row wrap;
 }
 
+/* Header */
 header {
     display: flex;
     flex-flow: row wrap;
@@ -101,9 +103,9 @@ header {
     margin-bottom: 20px;
 }
 
-.top-title p {
-   width: 100%; 
-   font-size: var(--big-paragraph);
+.top-title h2 {
+    width: 100%;
+    font-size: var(--big-subtitle);
 }
 
 .social-media {
@@ -122,6 +124,7 @@ header {
     padding: 20px;
 }
 
+/* Navbar */
 nav {
     width: 100%;
     height: fit-content;
@@ -148,6 +151,7 @@ li a {
     color: #000;
 }
 
+/* Main */
 main {
     width: 100%;
     padding: 0px 50px;
@@ -172,31 +176,38 @@ main {
 }
 
 .text-block p {
-    text-align: left;
+    text-align: justify;
 }
 
+/* Footer */
 footer {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
-    padding: 50px 50px 0px 50px;
+    padding: 50px 20px 0px 50px;
     background-color: rgb(138, 124, 230);
 }
 
 footer h3 {
-    font-size: var(--big-topic);
-    margin-bottom: 30px;
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
 footer ul {
     list-style-type: none;
 }
 
+footer li, footer li a {
+    font-size: 16px;
+}
+
 .footer-section {
     /* /!\ */
     width: 30%;
+    min-width: 200px;
     margin-bottom: 50px;
+    margin: 0px 5px 10px 5px;
 }
 
 .end {
@@ -205,51 +216,86 @@ footer ul {
     text-align: center;
 }
 
-/*
-@media only screen and (max-width: 1024px) {
+/*           /!!\            */
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
 
     .top-img, .top-title {
         width: 100%;
-        justify-content: center;
         text-align: center;
-    }    
-}
-
-@media only screen and (max-width: 1024px) and (min-width: 769px) {
-
-    .top-img .top-img-field {
-        width: var(--medium-top-img-field);
-        height: var(--medium-top-img-field);
-    }
-
-    .top-title h1 {
-        font-size: var(--medium-title);
-    }
-
-    p {
-        font-size: var(--medium-paragraph);
     }
     
-    main {
-        padding: 0px 18px;
-    }
-
     .container [class*="-block"] {
         width: 100%;
         margin-top: 30px;
         padding: 0;
     }
 
-    .container p  {
-        text-align: justify;
+    .top-title h1 {
+        font-size: var(--medium-title);
     }
     
-    .footer-section {
-        width: 100%;
+    .top-title h2 {
+        font-size: var(--medium-subtitle);
+    }
+
+    .text-block h2 {
+        font-size: var(--medium-topic);
+    }
+
+    p {
+        font-size: var(--medium-paragraph);
     }
 }
 
-@media only screen and (max-width: 769px)and (min-width: 481px) {
+/*           /!!\            */
+@media screen and (max-width: 768px) and (min-width: 481px) {
+
+    .top-img, .top-title {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .container [class*="-block"] {
+        width: 100%;
+        margin-top: 30px;
+        padding: 0;
+    }
+
+    .top-title h1 {
+        font-size: var(--little-title);
+    }
+
+    .top-title h2 {
+        font-size: var(--little-subtitle);
+    }
+
+    .text-block h2 {
+        font-size: var(--little-topic);
+    }
+
+    p {
+        font-size: var(--little-paragraph);
+    }
+
+}
+
+/*           /!!\            */
+@media screen and (max-width: 480px) and (min-width: 320px) {
+
+    .top-img, .top-title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .text-block {
+        padding: 0px 18px;
+    }
+    
+    .container [class*="-block"] {
+        width: 100%;
+        margin-top: 30px;
+        padding: 0;
+    }
 
     .top-img-field {
         width: var(--little-top-img-field);
@@ -260,41 +306,20 @@ footer ul {
         font-size: var(--little-title);
     }
 
+    .top-title h2 {
+        font-size: var(--little-subtitle);
+    }
+
+    .text-block h2 {
+        font-size: var(--little-topic);
+    }
+     
     p {
         font-size: var(--little-paragraph);
     }
 
-    nav {
-        padding-left: 10px;
-    }
-
-    nav ul {
-        width: 100%;
-        padding: 0;
-    }
-
-    nav ul li {
-        margin: 0px 10px 0px 0px;
-    }
-    
-    main {
-        padding: 0px 18px;
-    }
-
-    .container [class*="-block"] {
-        width: 100%;
-        margin-top: 30px;
-        padding: 0;
-    }
-
-    .container p  {
-        text-align: justify;
-    }
-    
     footer {
-        padding-right: 10px;
-        padding-left: 10px;
-        width: 100%;
+        padding-left: 20px;
     }
 
     .footer-section {
@@ -302,7 +327,50 @@ footer ul {
     }
 }
 
-@media only screen and (max-width: 489px) and (min-width: 320px){
+/*           /!!\            */
+@media screen and (max-width: 319px) {
     
+    .top-img, .top-title {
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        padding: 0px 18px;
+    }
+    
+    .container [class*="-block"] {
+        width: 100%;
+        margin-top: 30px;
+        padding: 0;
+    }
+
+    .top-img-field {
+        width: var(--little-top-img-field);
+        height: var(--little-top-img-field);
+    }
+
+    .top-title h1 {
+        font-size: var(--little-title);
+    }
+
+    .top-title h2 {
+        font-size: var(--little-subtitle);
+    }
+
+    .text-block h2 {
+        font-size: var(--little-topic);
+    }
+
+    p {
+        font-size: var(--little-paragraph);
+    }
+
+    footer {
+        padding-left: 20px;
+    }
+
+    .footer-section {
+        width: 100%;
+    } 
 }
-*/
