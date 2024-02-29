@@ -103,6 +103,10 @@ header {
     margin-bottom: 20px;
 }
 
+.top-title span {
+    color: var(--primaryColor);
+}
+
 .top-title h2 {
     width: 100%;
     font-size: var(--big-subtitle);
@@ -110,8 +114,8 @@ header {
 
 .social-media {
     display: inherit;
+    flex-direction: row;
     justify-content: center;
-    align-content: space-between;
     width: 50%;
 }
 
@@ -120,15 +124,34 @@ header {
 }
 
 .icon-link a i {
-    font-size: 40px;
+    font-size: 30px;
     padding: 20px;
+}
+
+.contact {
+    display: inherit;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    width: 50%;
+    padding-inline-end: 20px;
+}
+
+.contact-item {
+    display: inherit;
+    align-items: center;
+    padding: 20px;
+}
+
+.contact-item span {
+    font-size: 12px;
+    margin-left: 8px;
 }
 
 /* Navbar */
 nav {
     width: 100%;
     height: fit-content;
-    margin-bottom: 150px;
+    margin-bottom: 50px;
     padding: 10px 50px;
     position: sticky;
     overflow: hidden;
@@ -223,6 +246,14 @@ footer li, footer li a {
         width: 100%;
         text-align: center;
     }
+
+    .top-title h2 {
+        padding-left: 15px;
+    }
+
+    .social-media {
+        justify-content: flex-start;
+    }
     
     .container [class*="-block"] {
         width: 100%;
@@ -269,6 +300,11 @@ footer li, footer li a {
         font-size: var(--little-subtitle);
     }
 
+    .social-media, .contact {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
     .text-block h2 {
         font-size: var(--little-topic);
     }
@@ -285,6 +321,11 @@ footer li, footer li a {
     .top-img, .top-title {
         width: 100%;
         text-align: center;
+    }
+
+    .social-media, .contact {
+        width: 100%;
+        justify-content: flex-start;
     }
 
     .text-block {
@@ -333,6 +374,11 @@ footer li, footer li a {
     .top-img, .top-title {
         width: 100%;
         text-align: center;
+    }
+
+    .social-media, .contact {
+        width: 100%;
+        justify-content: flex-start;
     }
 
     main {
