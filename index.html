@@ -18,14 +18,8 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!--
-        Comentários de desenvolvimento
-
-        Sobre mim ->>
-
-            Tenho 17 anos esou nascido em Uberlândia, de Minas Gerais, e cresci nessa cidade desde então. Eu aprendi programação aos quinze anos, mas foi com meus 16 anos que, quando entrei no colegial, eu me vi projetando sistemas para internet no futuro.
-
-    !-->
+    <!-- jQuery -->
+    <script src="assets/jquery/jquery-3.7.1.js"></script>
 </head>
 
 <body>
@@ -67,7 +61,12 @@
 
     <!-- Início da Navbar -->
     <nav>
-        <ul>
+        <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
             <li><a href="#inicio">Início</a></li>
             <li><a href="#sobre-mim">Sobre mim</a></li>
             <li><a href="#o-que-estou-aprendendo">O que estou aprendendo</a></li>
@@ -129,6 +128,19 @@
         </div>
     </footer>
     <!-- Fim do Footer -->
+
+
+
+    <script src="assets/mobile-menu.js" defer>
+        /*
+        function translatar() {
+            document.querySelector(".mobile-menu").classList.toggle("active");
+            document.querySelector("nav").classList.toggle("active");
+            document.querySelector(".nav-list").classList.toggle("active");
+            console.log("ok");
+        }
+        */
+    </script>
 </body>
 
 </html>
