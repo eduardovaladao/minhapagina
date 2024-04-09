@@ -6,7 +6,7 @@
     "/!!\" significa "atenção dobrada, não errar";
     "root" --> Tema principal de cores e tamanhos de fontes para diferentes telas.
 
-*****/
+*/
 :root {
     /* Variáveis para fontes */
     --big-title: 80px;
@@ -33,8 +33,12 @@
     --little-top-img-field: 200px;
     
     /* Temas de cores */
-    --primaryColor: #FFFFFF;
-    --secondaryColor: #000000;
+    --jet: #292929ff;
+    --seasalt: #f7f7f7ff;
+    --dodger-blue: #1f9affff;
+    --outer-space: #474747ff;
+    --silver: #ccccccff;
+    --azul: #0070ccff;
 }
 
 * {
@@ -43,11 +47,11 @@
     margin: 0;
 }
 
-body { width: 100%; }
-
-.primary-color { color: var(--primaryColor); }
-
-.secondary-color { color: var(--secondaryColor); }
+body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--seasalt);
+}
 
 .flex-row {
     width: 100%;
@@ -57,16 +61,25 @@ body { width: 100%; }
 
 /* Header */
 header {
+    width: 100%;
+    min-width: fit-content;
+    background-color: var(--jet);
+}
+
+.header-container {
     display: flex;
     flex-flow: row wrap;
     width: 100%;
-    min-height: 300px;
-    background-color: rgb(206, 206, 206);
-    padding: 50px 0px;
-    margin-bottom: 20px;
+    padding: 50px 18px 10px 18px;
+    margin: 0;
 }
 
-.top-img, .top-title { margin-bottom: 50px; }
+.header-container .flex-row {
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
+.top-img, .top-title { margin-bottom: 20px; }
 
 .top-img {
     display: flex;
@@ -79,25 +92,33 @@ header {
     width: var(--big-top-img-field);
     height: var(--big-top-img-field);
     border-radius: 50%;
-    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    /* 
+     /!\ background-image: url(./abc.webp);
+    */
+    background-color: var(--seasalt);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .top-title {
     width: 50%;
-    padding: 50px 0px;
+    padding: 25px 0px;
 }
 
 .top-title h1 {
     width: 100%;
     font: var(--big-title) "Arial, Helvetica, sans-serif";
+    color: var(--seasalt);
     margin-bottom: 20px;
 }
 
-.top-title span { color: var(--primaryColor); }
+.top-title span { color: var(--dodger-blue); }
 
 .top-title h2 {
     width: 100%;
     font-size: var(--big-subtitle);
+    color: var(--seasalt);
 }
 
 .social-media {
@@ -109,9 +130,12 @@ header {
 
 .social-media .icon-link { display: inline-block; }
 
+.icon-link { margin-inline: 10px;}
+
 .icon-link a i {
     font-size: 30px;
-    padding: 10px;
+    color: var(--dodger-blue);
+    padding: 5px;
 }
 
 .contact {
@@ -126,10 +150,12 @@ header {
     display: inherit;
     align-items: center;
     padding: 10px;
+    color: var(--dodger-blue);
 }
 
 .contact-item span {
     font-size: 12px;
+    color: var(--seasalt);
     margin-left: 8px;
 }
 
@@ -138,13 +164,12 @@ nav {
     display: flex;
     align-items: center;
     width: 100%;
-    height: fit-content;
-    margin-bottom: 50px;
+    height: 55px;
     padding: 10px 50px;
     position: sticky;
-    overflow: hidden;
     top: 0px;
-    background-color: #FFFFFF;
+    border-top: 1px solid var(--seasalt);
+    background-color: var(--jet);
 }
 
 .mobile-menu {
@@ -156,7 +181,7 @@ nav {
     width: 30px;
     height: 2px;
     margin: 6px;
-    background-color: #000000;
+    background-color: var(--seasalt);
     transition: all 0.3s ease-in;
 }
 
@@ -171,7 +196,7 @@ nav ul li { margin: 0px 30px; }
 li a {
     text-decoration: none;
     font-size: 18px;
-    color: #000;
+    color: var(--seasalt);
 }
 
 
@@ -179,8 +204,8 @@ li a {
 main {
     width: 100%;
     padding: 0px 50px;
-    background-color: #FFFFFF;
     margin-bottom: 200px;
+    color: var(--jet);
 }
 
 .container {
@@ -203,35 +228,50 @@ main {
 
 /* Footer */
 footer {
+    background-color: var(--jet);
+}
+
+.footer-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     width: 100%;
     padding: 50px 20px 0px 50px;
-    background-color: rgb(138, 124, 230);
 }
 
 footer h3 {
     font-size: 20px;
+    color: var(--dodger-blue);
     margin-bottom: 20px;
 }
 
 footer ul { list-style-type: none; }
 
 footer li,
-footer li a { font-size: 16px; }
+footer li a {
+    font-size: 16px;
+    color: var(--seasalt);
+}
+
+.footer-container {
+    margin-bottom: 90px;
+}
 
 .footer-section {
     width: 30%;
     min-width: 200px;
     margin-bottom: 50px;
-    margin: 0px 5px 10px 5px;
+    margin: 0px 5px 20px 5px;
 }
 
 .end {
     width: 100%;
-    padding: 15px;
-    text-align: center;
+    padding: 5px;
+    text-align: left;
+    font-size: 12px;
+    color: var(--seasalt);
+    border-top: 1px solid var(--seasalt);
+    background-color: var(--very-light-black);
 }
 
 @media (max-width: 1024px) {
@@ -243,6 +283,9 @@ footer li a { font-size: 16px; }
         width: 100%;
         margin-top: 30px;
         padding: 0;
+    }
+    .social-media {
+        justify-content: flex-start;
     }
 }
 
@@ -265,9 +308,13 @@ footer li a { font-size: 16px; }
 }
 
 @media (max-width: 768px) {
-    header { padding-inline: 10px;}
+    .social-media {
+        width: 100%;
+        margin-bottom: 40px;
+        justify-content: center;
+    }
 
-    .social-media, .contact {
+    .contact {
         width: 100%;
         justify-content: flex-start;
     }
@@ -289,22 +336,24 @@ footer li a { font-size: 16px; }
 @media (max-width: 480px) {
 
     nav {
-        height: 50px;
         flex-direction: column;
         align-items: flex-start;
-        overflow-y: hidden;
-        transition: all 0.5s ease-in;
+        overflow: hidden;
+        transition: all 0.4s ease-in;
     }
 
     .nav-list {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        align-items: flex-start;
         width: 70vw;
         height: 50vh;
         translate: -100%;
-        transition: all 0.5s ease-in;
+        transition: all 0.4s ease-in;
+    }
+
+    .nav-list li {
+        width: 100%;
     }
 
     .mobile-menu {
@@ -320,9 +369,11 @@ footer li a { font-size: 16px; }
     .text-block h2 { font-size: var(--little-topic); }
     p { font-size: var(--little-paragraph); }
 
-    footer { padding-left: 20px; }
+    .footer-container { padding-left: 20px; }
 
-    .footer-section { width: 100%; }
+    .footer-section { 
+        width: 100%; 
+    }
 }
 
 @media screen and (max-width: 480px) and (min-width: 320px) {
@@ -353,17 +404,6 @@ footer li a { font-size: 16px; }
 }
 
 nav.active {
-    height: calc(50px + 50vh);
+    height: calc(50px + 30vh);
 }
 
-@keyframes fedeInLink {
-    from {
-        opacity: 0;
-        translate: -50px;
-    }
-
-    to {
-        opacity: 1;
-        translate: 0px;
-    }
-}
