@@ -39,7 +39,8 @@ $(document).ready(() => {
                     console.log("Body width condition executed. Navbar is animated!");
                     // Comentário ativado quando a condição acaba de ser executada
                     this.toggleActive();
-                    
+                    // Essa ação faz o menu se recolher quando o usuário clica em algum dos links
+
                 } else {
                     console.log("Navbar is still static!");
                     // Aqui, o cliente não possui o "menu hamburguer", logo, os "onclicks" dos links da navbar permanecem inativos
@@ -49,13 +50,8 @@ $(document).ready(() => {
 
         start() {
             console.log("Menu Hamburguer -> class:\n\n", this);
-
-            if (this.mobileMenu) {
-                this.addMenuClick();
-                this.addLinkClick();
-            } else {
-                alert("O menu não está funcionando! :(\nVerifique o código.");
-            }
+            this.addMenuClick();
+            this.addLinkClick();
         }
     }
 
@@ -66,6 +62,6 @@ $(document).ready(() => {
         ".nav-list li a"
     );
 
-    //if(MenuHamburguer)
     menuHamburguer.start();
+    // Inicializa as funções principais do objeto
 });

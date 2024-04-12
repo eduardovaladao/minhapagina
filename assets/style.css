@@ -95,10 +95,22 @@ header {
     border: 2px solid #ffffff;
     /* 
      /!\ background-image: url(./abc.webp);
-    */
+    
     background-color: var(--seasalt);
     background-position: center;
     background-repeat: no-repeat;
+    */
+
+    /* /!\ */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* /!\ */
+.top-img-field img {
+    width: 200%;
+    transform: translateX(-130px);
 }
 
 .top-title {
@@ -136,6 +148,12 @@ header {
     font-size: 30px;
     color: var(--dodger-blue);
     padding: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.icon-link a i:hover {
+    color: var(--azul);
+    transform: translateY(-5px);
 }
 
 .contact {
@@ -151,12 +169,28 @@ header {
     align-items: center;
     padding: 10px;
     color: var(--dodger-blue);
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-item i:hover {
+    color: var(--azul);
+    animation-name: shaking;
+    animation-duration: 0.25s;
+    animation-iteration-count: 3;
+    animation-delay: 0.3s;
+    cursor: default;
 }
 
 .contact-item span {
     font-size: 12px;
     color: var(--seasalt);
     margin-left: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-item span:hover {
+    color: var(--silver);
+    text-shadow: 0px 0px 2px var(--silver);
 }
 
 /* Navbar */
@@ -170,6 +204,7 @@ nav {
     top: 0px;
     border-top: 1px solid var(--seasalt);
     background-color: var(--jet);
+    z-index: 1;
 }
 
 .mobile-menu {
@@ -191,15 +226,22 @@ nav {
     list-style-type: none;
 }
 
-nav ul li { 
+.nav-list li { 
     margin: 0px 30px;
     text-align: center;
 }
 
-li a {
+li a, li {
     text-decoration: none;
     font-size: 18px;
     color: var(--seasalt);
+    transition: all 0.3s ease-in-out;
+}
+
+li a:hover, li:hover {
+    /* Isto afeta os links do footer também */
+    color: var(--silver);
+    text-shadow: 0px 0px 2px var(--silver);
 }
 
 
@@ -224,7 +266,19 @@ main {
 
 .text-block h2 {
     font-size: var(--big-topic);
+    padding: 20px 0px;
     margin-bottom: 50px;
+    position: relative;
+}
+
+.text-block h2::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    height: 3px;
+    width: 90%;
+    min-width: 236px;
+    background-color: var(--azul);
 }
 
 .text-block p { text-align: justify; }
@@ -408,5 +462,14 @@ footer li a {
 
 nav.active {
     height: calc(50px + 30vh);
+}
+
+@keyframes shaking {
+    from {
+        rotate: -5deg;
+    }
+    to {
+        rotate: 5deg;
+    }
 }
 
