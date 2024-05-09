@@ -1,67 +1,57 @@
-$(document).ready(() => {
+console.log("Hello World!");
 
-    console.log("Hello!");
+class MobileMenu {
+    constructor() {
+        this.body = document.querySelector(".mobile-menu");
 
-    class MenuHamburguer {
-        constructor(nav, mobileMenu, navList, navLinks) {
-            this.nav = $(nav);
+        this.escape = this.body.querySelector(".escape")
 
-            this.mobileMenu = $(mobileMenu);
+        this.menuList = this.body.querySelector(".mobile-menu-list");
 
-            this.navList = $(navList);
+        this.listItems = this.menuList.querySelectorAll("li a");
 
-            this.navLinks = $(navLinks);
+        this.menuHamburguer = document.querySelector(".menu-hamburguer");
 
-            this.active = "active";
-        }
+        this.active = "active";
 
-        toggleActive() {
-            this.nav.toggleClass(this.active);
-            this.navList.toggleClass(this.active);
-            this.mobileMenu.toggleClass(this.active);
-            console.log("Alright!");
-        }
-
-        addMenuClick() {
-            console.log("Ok methods");
-
-            $(this.mobileMenu).click(() => {
-                console.log("Ok click");
-                this.toggleActive();
-            });
-        }
-
-        addLinkClick() {
-            console.log("added \"click\" on nav links!");
-            this.navLinks.click(() => {
-                // Cada link agora tem uma função "onclick"
-                if (window.document.body.clientWidth <= 480) {
-                    console.log("Body width condition executed. Navbar is animated!");
-                    // Comentário ativado quando a condição acaba de ser executada
-                    this.toggleActive();
-                    // Essa ação faz o menu se recolher quando o usuário clica em algum dos links
-
-                } else {
-                    console.log("Navbar is still static!");
-                    // Aqui, o cliente não possui o "menu hamburguer", logo, os "onclicks" dos links da navbar permanecem inativos
-                }
-            });
-        }
-
-        start() {
-            console.log("Menu Hamburguer -> class:\n\n", this);
-            this.addMenuClick();
-            this.addLinkClick();
-        }
+        this.mobileMenuClasses = this.body.classList;
     }
 
-    const menuHamburguer = new MenuHamburguer(
-        "nav",
-        ".mobile-menu",
-        ".nav-list",
-        ".nav-list li a"
-    );
+    addOnClickEvents() {
+        this.menuHamburguer.addEventListener("click", () => {
+            this.mobileMenuClasses.add(this.active);
+        });
 
-    menuHamburguer.start();
-    // Inicializa as funções principais do objeto
-});
+        this.escape.addEventListener("click", () => {
+            this.mobileMenuClasses.remove(this.active);
+        });
+
+        this.listItems.forEach((element) => {
+            element.addEventListener("click", () => {
+                this.mobileMenuClasses.remove(this.active);
+            });
+        });
+    }
+
+    onResize() {        
+        window.addEventListener("resize", () => {
+            if (this.mobileMenuClasses.contains(this.active) && document.body.clientWidth >= 480) {
+                console.log("oi");
+                this.mobileMenuClasses.remove(this.active);
+            }
+        });
+    }
+
+    start() {
+        console.log("Mobile Menu -> class:\n\n", this);
+        if (this.body) {
+            console.log("OK 👌");
+            this.addOnClickEvents();
+            this.onResize();
+        }
+    }
+}
+
+const mobileMenu = new MobileMenu();
+
+mobileMenu.start();
