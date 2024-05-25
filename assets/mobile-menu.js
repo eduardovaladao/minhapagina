@@ -33,10 +33,9 @@ class MobileMenu {
         });
     }
 
-    onResize() {        
+    onResize() {
         window.addEventListener("resize", () => {
             if (this.mobileMenuClasses.contains(this.active) && document.body.clientWidth >= 480) {
-                console.log("oi");
                 this.mobileMenuClasses.remove(this.active);
             }
         });

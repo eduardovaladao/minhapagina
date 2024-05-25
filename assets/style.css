@@ -9,30 +9,6 @@
 
 */
 :root {
-    /* Variáveis para fontes */
-    --big-title: 80px;
-    --big-subtitle: 26px;
-    --big-topic: 38px;
-    --big-paragraph: 21px;
-    --big-info: 18px;
-
-    --medium-title: 60px;
-    --medium-subtitle: 22px;
-    --medium-topic: 30px;
-    --medium-paragraph: 18px;
-    --medium-info: 14px;
-
-    --little-title: 40px;
-    --little-subtitle: 18px;
-    --little-topic: 22px;
-    --little-paragraph: 14px;
-    --little-info: 12px;
-
-    /* Tamanho da imagem principal */
-    --big-top-img-field: 300px;
-    --medium-top-img-field: 250px;
-    --little-top-img-field: 200px;
-
     /* Temas de cores */
     --jet: #292929ff;
     --seasalt: #f7f7f7ff;
@@ -40,7 +16,10 @@
     --outer-space: #474747ff;
     --silver: #ccccccff;
     --azul: #0070ccff;
+
+    /* /!!\ NOVAS FONTES */
 }
+
 
 * {
     box-sizing: border-box;
@@ -74,6 +53,7 @@ header {
 .header-container {
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
     width: 100%;
     padding: 50px 18px 10px 18px;
     margin: 0;
@@ -97,17 +77,11 @@ header {
 }
 
 .top-img-field {
-    width: var(--big-top-img-field);
-    height: var(--big-top-img-field);
+    width: 240px;
+    height: 240px;
+    border: 8px solid var(--outer-space);
     border-radius: 50%;
-    border: 2px solid #ffffff;
-    /*     
-    background-color: var(--seasalt);
-    background-position: center;
-    background-repeat: no-repeat;
-    */
-
-    /* /!\ */
+    box-shadow: 1px 1px 2px #000;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -122,13 +96,34 @@ header {
 .top-title {
     width: 50%;
     padding: 25px 0px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
 }
 
 .top-title h1 {
-    width: 100%;
-    font: var(--big-title) "Arial, Helvetica, sans-serif";
+    width: fit-content;
+    font: 3.5rem "Arial, Helvetica, sans-serif"; 
+    /* 3.5*16px = 56px */
     color: var(--seasalt);
-    margin-bottom: 20px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.top-title h1::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    height: 8px;
+    width: 0;
+    margin: auto;
+    background-color: var(--dodger-blue);
+    animation-name: growing;
+    animation-timing-function: ease-out;
+    animation-duration: 1.25s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    
 }
 
 .top-title span {
@@ -137,7 +132,8 @@ header {
 
 .top-title h2 {
     width: 100%;
-    font-size: var(--big-subtitle);
+    font-size: 1.125rem;
+    /* 18px */
     color: var(--seasalt);
 }
 
@@ -313,13 +309,16 @@ nav {
 li a,
 li {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1.125rem;
+    /*18px*/
     color: var(--seasalt);
     transition: all 0.3s ease-in-out;
 }
 
 li a:hover,
-li:hover {
+li a:focus,
+li:hover,
+li:focus {
     /* Isto afeta os links do footer também */
     color: var(--silver);
     text-shadow: 0px 0px 2px var(--silver);
@@ -346,7 +345,8 @@ main {
 }
 
 .text-block h2 {
-    font-size: var(--big-topic);
+    font-size: 2rem;
+    /*2rem = 32px*/
     padding: 20px 0px;
     margin-bottom: 50px;
     position: relative;
@@ -357,13 +357,15 @@ main {
     position: absolute;
     top: 100%;
     height: 3px;
-    width: 90%;
+    width: 100%;
     min-width: 236px;
     background-color: var(--azul);
 }
 
 .text-block p {
     text-align: justify;
+    font-size: 1rem;
+    /*16px*/
 }
 
 /* Footer */
@@ -380,7 +382,7 @@ footer {
 }
 
 footer h3 {
-    font-size: 20px;
+    font-size: 1.25rem;
     color: var(--dodger-blue);
     margin-bottom: 20px;
 }
@@ -409,7 +411,7 @@ footer li a {
 .end {
     width: 100%;
     padding: 5px;
-    text-align: left;
+    text-align: center;
     font-size: 12px;
     color: var(--seasalt);
     border-top: 1px solid var(--seasalt);
@@ -417,11 +419,14 @@ footer li a {
 }
 
 @media (max-width: 1024px) {
-
     .top-img,
     .top-title {
         width: 100%;
         text-align: center;
+    }
+
+    .top-title {
+        align-items: center;
     }
 
     .container [class*="-block"] {
@@ -438,22 +443,6 @@ footer li a {
 @media (max-width: 1024px) and (min-width: 769px) {
     .top-title h2 {
         padding-left: 15px;
-    }
-
-    .top-title h1 {
-        font-size: var(--medium-title);
-    }
-
-    .top-title h2 {
-        font-size: var(--medium-subtitle);
-    }
-
-    .text-block h2 {
-        font-size: var(--medium-topic);
-    }
-
-    p {
-        font-size: var(--medium-paragraph);
     }
 }
 
@@ -476,29 +465,12 @@ footer li a {
 }
 
 @media screen and (max-width: 768px) and (min-width: 481px) {
-    .top-title h1 {
-        font-size: var(--little-title);
-    }
-
-    .top-title h2 {
-        font-size: var(--little-subtitle);
-    }
-
-    .text-block h2 {
-        font-size: var(--little-topic);
-    }
-
-    p {
-        font-size: var(--little-paragraph);
-    }
-
     nav {
         align-items: flex-start;
     }
 }
 
 @media (max-width: 480px) {
-
     .nav-list {
         display: none;
     }
@@ -508,47 +480,8 @@ footer li a {
         display: flex;
     }
 
-    /*
-    .nav-list {
-        display: flex;
-        position: fixed;
-        z-index: 0;
-        top: 0;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        width: 60vw;
-        height: 100vh;
-        translate: -100%;
-        background-color: var(--outer-space);
-        transition: all 0.4s ease-in;
-        padding: 0;
-    }
-    */
-
     .menu-hamburguer {
         display: block;
-    }
-
-    .top-img-field {
-        width: var(--little-top-img-field);
-        height: var(--little-top-img-field);
-    }
-
-    .top-title h1 {
-        font-size: var(--little-title);
-    }
-
-    .top-title h2 {
-        font-size: var(--little-subtitle);
-    }
-
-    .text-block h2 {
-        font-size: var(--little-topic);
-    }
-
-    p {
-        font-size: var(--little-paragraph);
     }
 
     .footer-container {
@@ -576,31 +509,6 @@ footer li a {
     transform: translateX(0%);
 }
 
-/*
-.mobile-menu.active .line1 {
-    rotate: 45deg;
-    translate: 0px 8px;
-}
-
-.mobile-menu.active .line2 {
-    opacity: 0;
-}
-
-.mobile-menu.active .line3 {
-    rotate: -45deg;
-    translate: 0px -8px;
-}
-
-.nav-list.active {
-    display: flex;
-    translate: 0%;
-}
-
-nav.active {
-    height: calc(50px + 30vh);
-}
-*/
-
 @keyframes shaking {
     from {
         rotate: -5deg;
@@ -608,5 +516,17 @@ nav.active {
 
     to {
         rotate: 5deg;
+    }
+}
+
+@keyframes growing {
+    from {
+        width: 0;
+        
+    }
+
+    to {
+        width: 100%;
+        
     }
 }
