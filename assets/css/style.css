@@ -324,49 +324,79 @@ li:focus {
     text-shadow: 0px 0px 2px var(--silver);
 }
 
-
 /* Main */
+
+/*   /!!\   */
 main {
     width: 100%;
     padding: 0px 50px;
     margin-bottom: 200px;
     color: var(--jet);
+    display: flex;
+    flex-direction: column;
 }
-
+/*   /!!\   */
 .container {
     width: 100%;
     padding: 50px 0px;
     margin: 20px 0px;
+    display: inherit;
+    flex-direction: column;
+    align-content: center;
 }
-
+/*   /!!\   */
 .container .text-block {
-    width: 70%;
-    padding: 0px 50px;
+    width: 50%;
+    padding: 0px 50px; 
 }
-
+/*   /!!\   */
 .text-block h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     /*2rem = 32px*/
-    padding: 20px 0px;
-    margin-bottom: 50px;
+    text-align: center;
+    padding: 10px 0px;
+    margin-bottom: 20px;
     position: relative;
 }
-
+/*   /!!\   */
 .text-block h2::before {
     content: "";
     position: absolute;
     top: 100%;
+    left: 0;
     height: 3px;
     width: 100%;
     min-width: 236px;
     background-color: var(--azul);
 }
-
+/*   /!!\   */
 .text-block p {
+    color: var(--outer-space);
     text-align: justify;
     font-size: 1rem;
     /*16px*/
+    background-color: var(--silver);
+    padding: 30px 15px 25px 15px;
+    margin-inline-start: 40px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    border-bottom: 3px solid var(--outer-space);
 }
+/*   /!!\   */
+.languages-list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+/*   /!!\   */
+.languages-list ul {
+    margin-inline-end: 30px;
+}
+/*   /!!\   */
+.languages-list ul li {
+    color: var(--jet);
+}
+
 
 /* Footer */
 footer {
@@ -404,8 +434,7 @@ footer li a {
 .footer-section {
     width: 30%;
     min-width: 200px;
-    margin-bottom: 50px;
-    margin: 0px 5px 20px 5px;
+    margin: 0px 5px 50px 5px;
 }
 
 .end {
@@ -415,7 +444,7 @@ footer li a {
     font-size: 12px;
     color: var(--seasalt);
     border-top: 1px solid var(--seasalt);
-    background-color: var(--very-light-black);
+    background-color: var(--outer-space);
 }
 
 @media (max-width: 1024px) {
@@ -507,26 +536,4 @@ footer li a {
 
 .mobile-menu.active {
     transform: translateX(0%);
-}
-
-@keyframes shaking {
-    from {
-        rotate: -5deg;
-    }
-
-    to {
-        rotate: 5deg;
-    }
-}
-
-@keyframes growing {
-    from {
-        width: 0;
-        
-    }
-
-    to {
-        width: 100%;
-        
-    }
 }

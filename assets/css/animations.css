@@ -1,0 +1,15 @@
+@keyframes shaking {
+    from {
+        rotate: -5deg;
+    } to {
+        rotate: 5deg;
+    }
+}
+
+@keyframes growing {
+    from {
+        width: 0; 
+    } to {
+        width: 100%;
+    }
+}

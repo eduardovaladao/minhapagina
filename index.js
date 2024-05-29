@@ -9,8 +9,12 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"))
 })
 
-app.get("/assets/style.css", (req, res) => {
-    res.sendFile(path.join(__dirname, "assets/style.css"))
+app.get("/assets/css/style.css", (req, res) => {
+    res.sendFile(path.join(__dirname, "assets/css/style.css"))
+})
+
+app.get("/assets/css/animations.css", (req, res) => {
+    res.sendFile(path.join(__dirname, "assets/css/animations.css"))
 })
 
 app.get("/assets/mobile-menu.js", (req, res) => {
