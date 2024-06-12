@@ -430,8 +430,8 @@ main {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    justify-content: space-around;
-    gap: 80px;
+    justify-content: center;
+    gap: 100px;
     width: 80%;
     padding: 50px 20px;
     margin: auto;
@@ -494,24 +494,6 @@ footer {
     justify-content: flex-start;
     width: 100%;
     padding: 50px 20px 0px 50px;
-}
-
-footer h3 {
-    font-size: 1.25rem;
-    color: var(--dodger-blue);
-    margin-bottom: 20px;
-}
-
-footer ul {
-    list-style-type: none;
-}
-
-footer span {
-    font-size: 16px;
-    color: var(--seasalt);
-}
-
-.footer-container {
     margin-bottom: 90px;
 }
 
@@ -519,6 +501,22 @@ footer span {
     width: 30%;
     min-width: 200px;
     margin: 0px 5px 50px 5px;
+}
+
+.footer-section h3 {
+    font-size: 1.25rem;
+    color: var(--dodger-blue);
+    margin-bottom: 20px;
+}
+
+.footer-section ul li a, .footer-section span {
+    font-size: 0.9rem;
+}
+
+.footer-section span {
+    display: block;
+    width: 100%;
+    color: var(--seasalt);
 }
 
 .end {
