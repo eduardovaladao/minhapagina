@@ -22,7 +22,6 @@ class MobileMenu {
     }
 
     removeActive() {
-        console.log("ha")
         this.mobileMenuClasses.remove(this.active);
     }
 

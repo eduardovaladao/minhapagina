@@ -482,10 +482,94 @@ main {
 
 /* Footer */
 footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     width: 100%;
+    height: max-content;
+    min-width: 100vh;
     padding-top: 100px;
     box-shadow: 0px 0px 8px var(--outer-space);
     background-color: var(--jet);
+}
+
+footer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+footer form h2 {
+    font-size: 1.8rem;
+    color: var(--seasalt);
+    padding: 10px 0px;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+footer form h2::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--dodger-blue);
+}
+
+label, input, textarea, button {
+    width: 30%;
+    min-width: 200px;
+}
+
+label {
+    font-size: 1.1rem;
+    color: var(--seasalt);
+    margin-bottom: 10px;
+}
+
+input, textarea {
+    font: 1rem 'Times New Roman', Times, serif;
+    background-color: var(--seasalt);
+    border: 3px solid var(--outer-space);
+    border-radius: 18px;
+    margin-bottom: 20px;
+    padding: 18px;
+}
+
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
+    outline: none;
+    border: 3px solid var(--azul);
+    box-shadow: 0 0 0 2px var(--outer-space);
+}
+
+
+input {
+    height: 30px;
+}
+
+textarea {
+    height: max-content;
+    min-height: 100px;
+    max-height: 200px;
+    overflow: scroll;
+    scrollbar-width: none;
+    resize: none;
+}
+
+button {
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--seasalt);
+    background-color: var(--dodger-blue);
+    border: 3px solid var(--dodger-blue);
+    border-radius: 20px;
+    padding: 5px;
 }
 
 .footer-container {
@@ -494,13 +578,13 @@ footer {
     justify-content: flex-start;
     width: 100%;
     padding: 50px 20px 0px 50px;
-    margin-bottom: 90px;
+    margin-bottom: 20px;
 }
 
 .footer-section {
     width: 30%;
     min-width: 200px;
-    margin: 0px 5px 50px 5px;
+    margin: 0px 5px 20px 5px;
 }
 
 .footer-section h3 {
@@ -526,12 +610,11 @@ footer {
     font-size: 12px;
     color: var(--seasalt);
     border-top: 1px solid var(--seasalt);
-    background-color: var(--outer-space);
+    background-color: var(--jet);
 }
 
 /* Media queries */
 @media (max-width: 1024px) {
-
     .top-img,
     .top-title {
         width: 100%;
