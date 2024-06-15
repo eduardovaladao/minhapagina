@@ -143,7 +143,9 @@ header {
     display: inherit;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     width: 50%;
+    padding-inline-start: 30px;
 }
 
 .social-media .icon-link {
@@ -271,6 +273,7 @@ header {
 /* Navbar */
 nav {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     height: 55px;
@@ -302,6 +305,8 @@ nav {
 .nav-list {
     display: flex;
     flex-flow: row nowrap;
+    justify-content: center;
+    width: 100%;
 }
 
 .nav-list li {
@@ -485,23 +490,31 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    align-items: center;
     width: 100%;
-    height: max-content;
-    min-width: 100vh;
+    height: fit-content;
+    max-height: max-content;   
     padding-top: 100px;
     box-shadow: 0px 0px 8px var(--outer-space);
     background-color: var(--jet);
 }
 
-footer form {
+.form-container {
+    width: 100%;
+}
+
+.form-container form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    min-width: 200px;
+    max-width: 600px;
+    padding: 20px;
+    margin: auto;
     margin-bottom: 40px;
 }
 
-footer form h2 {
+form h2 {
     font-size: 1.8rem;
     color: var(--seasalt);
     padding: 10px 0px;
@@ -509,7 +522,7 @@ footer form h2 {
     position: relative;
 }
 
-footer form h2::before {
+form h2::before {
     content: "";
     position: absolute;
     top: 100%;
@@ -520,7 +533,7 @@ footer form h2::before {
 }
 
 label, input, textarea, button {
-    width: 30%;
+    width: 100%;
     min-width: 200px;
 }
 
@@ -548,7 +561,6 @@ textarea:focus {
     box-shadow: 0 0 0 2px var(--outer-space);
 }
 
-
 input {
     height: 30px;
 }
@@ -566,10 +578,43 @@ button {
     font-size: 1.2rem;
     font-family: 'Times New Roman', Times, serif;
     color: var(--seasalt);
-    background-color: var(--dodger-blue);
-    border: 3px solid var(--dodger-blue);
+    border: none;
     border-radius: 20px;
     padding: 5px;
+    margin-bottom: 30px;
+}
+
+button:hover,
+button:focus {
+    color: var(--silver);
+    background-color: var(--azul);
+    box-shadow: 0 0  0 2px var(--outer-space);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    background-color: var(--outer-space);
+}
+
+button:enabled {
+    cursor: pointer;
+    background-color: var(--dodger-blue);
+}
+
+.form-service-assignment {
+    width: 100%;
+    text-align: right;
+}
+
+.form-service-assignment a {
+    color: var(--silver);
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.form-service-assignment a:hover,
+.form-service-assignment a:focus {
+    text-decoration: underline;
 }
 
 .footer-container {
@@ -629,6 +674,10 @@ button {
         justify-content: flex-start;
     }
 
+    .nav-list {
+        justify-content: center
+    }
+
     .info-block {
         width: 50%;
     }
@@ -651,17 +700,16 @@ button {
         width: 100%;
         justify-content: flex-start;
     }
+    
+    nav {
+        padding: 0px 20px;
+        justify-content: flex-start;
+    }
 
     .info-block {
         width: 500px;
         margin-bottom: 40px;
-    }
-}
-
-@media screen and (max-width: 768px) and (min-width: 481px) {
-    nav {
-        align-items: flex-start;
-    }
+    } 
 }
 
 @media (max-width: 480px) {

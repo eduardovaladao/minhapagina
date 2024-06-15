@@ -15,6 +15,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script defer src="assets/js/mobile-menu.js"></script>
+    <script defer src="assets/js/email-form.js"></script>
 </head>
 
 <body>
@@ -152,20 +153,25 @@
     <!-- Fim do Main -->
     <!-- Início do Footer -->
     <footer>
-        <form action="https://formsubmit.co/ajax/eduardovaladao2006@gmail.com" method="POST">
-            <h2>Envie uma mensagem</h2>
-            
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome" required>
+        <div class="form-container">
+            <form id="" action="https://formsubmit.co/ajax/eduardovaladao2006@gmail.com" method="POST" data-form>
+                <h2>Envie uma mensagem</h2>
 
-            <label for="email">Email:</label>
-            <input type="text" name="email" id="email" required>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" required>
+                
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email" required>
+                
+                <label for="mensagem">Mensagem:</label>
+                <textarea name="mensagem" id="mensagem" required></textarea>
 
-            <label for="mensagem">Mensagem:</label>
-            <textarea name="mensagem" id="mensagem" required></textarea>
+                <button type="submit" data-button>Enviar</button>
 
-            <button type="submit">Enviar</button>
-        </form>
+                <span class="form-service-assignment"><a target="_blank" href="https://formsubmit.co/">Serviço de FormSubmit</a></span>
+            </form>
+
+        </div>
         <div class="footer-container">
             <div class="footer-section">
                 <h3>Veja os tópicos</h3>
