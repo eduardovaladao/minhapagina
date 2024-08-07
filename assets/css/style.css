@@ -145,7 +145,7 @@ header {
     justify-content: center;
     align-items: center;
     width: 50%;
-    padding-inline: 10px;
+    padding-inline-start: 30px;
 }
 
 .social-media .icon-link {
